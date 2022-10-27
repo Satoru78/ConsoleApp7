@@ -12,29 +12,63 @@ namespace ConsoleApp7
         {
             Console.WriteLine("Введите пароль:");
             string password = Convert.ToString(Console.ReadLine());
-            if()
-            {
+            ChekingPassword(password);
 
-                
+            Console.ReadKey();
+         
+        }
+       public static string ChekingPassword(string pass)
+            {
+            if(pass.Length == 8)
+            {
+                if(pass.Any(char.IsLetter))
+                {
+                    if(pass.Any(char.IsDigit))
+                    {
+                        if(pass.Any(char.IsPunctuation))
+                        {
+                            if(pass.Any(char.IsSymbol))
+                            {
+                                if (pass.Any(char.IsLower))
+                                {
+                                    if (pass.Any(char.IsUpper))
+                                    {
+                                        
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Отсутвуют буквы нижнего регистра");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Отсутвуют буквы нижнего регистра");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Нет спец символов");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Нет знаков препинания");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Отсутсвуют цифры");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Отсутствуют буквы!");
+                }
             }
             else
             {
-                Console.WriteLine("Повторите попытку!");
+                Console.WriteLine("Пароль корректный!");
             }
-        }
-            public string ChekingPassword()
-            {
-              
-                 bool CheckPass(string pass) => pass.Length >= 6
-                 && pass.Any(char.IsLetter)
-                 && pass.Any(char.IsDigit)
-                 && pass.Any(char.IsPunctuation)
-                 && pass.Any(char.IsLower)
-                 && pass.Any(char.IsUpper);
-
-               Console.WriteLine(CheckPass("Qwerty123"));
-               Console.WriteLine(CheckPass("Qwerty123!"));
-
             return pass; 
             }
     }
